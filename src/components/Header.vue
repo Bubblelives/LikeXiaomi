@@ -16,8 +16,21 @@
 			<!-- tarBar -->
 			<slot name="tarbar">
 				<div class="tarbar">
-					<ul class="">
-						<li></li>
+					<ul class="type-none nav header-nav">
+						<li
+							v-for="(item, key) in model"
+							:key="key"
+							@mouseover="changeTabbarChildren(item)"
+						>
+							{{ item.name }}
+						</li>
+						<li>服务</li>
+						<li>社区</li>
+						<div class="">
+							<div class="container">
+								<router-link tag="div"> </router-link>
+							</div>
+						</div>
 					</ul>
 				</div>
 			</slot>
@@ -32,9 +45,17 @@ export default {
 		model: { type: Array },
 	},
 	data() {
-		return {};
+		return {
+			tarbarChildren: {}, //二级菜单容器
+			keywords: "", //搜索关键词
+		};
 	},
-	methods: {},
+	methods: {
+		//鼠标移至tarbar上出现商品二级菜单
+		changeTabbarChildren(item) {
+			this.tarbarChildren = item;
+		},
+	},
 	components: {},
 	computed: {},
 	created() {},

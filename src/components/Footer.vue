@@ -1,18 +1,19 @@
-<template></template>
+<template>
+	<div class=""></div>
+</template>
 
 <script>
 export default {
-  name: "Footer",
-  data() {
-    return {};
-  },
-  methods: {},
-  components: {},
-  computed: {},
-  created() {},
-  watch: {},
+	name: "Footer",
+	data() {
+		return {};
+	},
+	methods: {},
+	components: {},
+	computed: {},
+	created() {},
+	watch: {},
 };
 </script>
 
-<style>
-</style>
+<style></style>
