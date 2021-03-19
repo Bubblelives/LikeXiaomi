@@ -4,11 +4,11 @@
 		<div class="box-left">
 			<ul class="type-none">
 				<li v-for="(item, key) in CategoryList" :key="key">
-					{{ item.name }}
+					<router-link tag="a" to="/">{{ item.name }}</router-link>
 				</li>
 			</ul>
 		</div>
-		<!-- 幻灯片 -->
+		<!-- 详情页 -->
 		<div class="box-right"></div>
 	</div>
 </template>
@@ -37,4 +37,39 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+a {
+	text-decoration: none;
+}
+.box {
+	height: 460px;
+	width: 234px;
+	position: relative;
+
+	.box-left {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(105, 101, 101, 0.6);
+		ul {
+			height: 460px;
+			padding: 20px 0;
+			li {
+				width: 100%;
+				height: 42px;
+
+				a {
+					line-height: 46px;
+					color: #ffffff;
+					font-weight: 700;
+					height: 42px;
+					padding-left: 30px;
+					display: block;
+				}
+			}
+			li:hover {
+				background-color: #ff6700;
+			}
+		}
+	}
+}
+</style>

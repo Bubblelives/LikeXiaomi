@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="displayContent">
 		<!-- 主题menu+广告幻灯片 -->
 		<div class="home-hero">
 			<!-- menu -->
@@ -25,15 +25,33 @@ export default {
 			swiperList: [],
 		};
 	},
-	methods: {},
+	methods: {
+		getCategoryList() {
+			this.$axios
+				.get("/test/getCategoryList")
+				.then((response) => {
+					this.CategoryList = response.data.retObj;
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		},
+	},
 	components: {
 		Body,
 		HomeAd,
 	},
 	computed: {},
-	created() {},
+	created() {
+		this.getCategoryList();
+	},
 	watch: {},
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.displayContent {
+	width: 1226px;
+	margin: 0 auto;
+}
+</style>

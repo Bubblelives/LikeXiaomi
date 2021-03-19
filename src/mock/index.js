@@ -119,3 +119,38 @@ Mock.mock("/test/header-nav", 'get', {
         "name": "路由器"
     }]
 })
+
+Mock.mock("/test/getCategoryList", "get", {
+    retCode: 200,
+    retObj: [{
+        id: 1,
+        name: "手机 电话卡"
+    }, {
+        id: 2,
+        name: "电视 盒子"
+    }, {
+        id: 3,
+        name: "笔记本 显示器"
+    }, {
+        id: 4,
+        name: "家电 插线板"
+    }, {
+        id: 5,
+        name: "出行 穿戴"
+    }, {
+        id: 6,
+        name: "智能 路由器"
+    }, {
+        id: 7,
+        name: "电源 配件"
+    }, {
+        id: 8,
+        name: "健康 儿童"
+    }, {
+        id: 9,
+        name: "耳机 音响"
+    }, {
+        id: 10,
+        name: "生活 箱包"
+    }]
+})
