@@ -3,7 +3,11 @@
 		<!-- 左侧菜单栏 -->
 		<div class="box-left">
 			<ul class="type-none">
-				<li v-for="(item, key) in CategoryList" :key="key">
+				<li
+					v-for="(item, key) in CategoryList"
+					:key="key"
+					@mouseover="showProducts(item)"
+				>
 					<router-link tag="a" to="/">{{ item.name }}</router-link>
 				</li>
 			</ul>
@@ -27,9 +31,22 @@ export default {
 		},
 	},
 	data() {
-		return {};
+		return {
+			productsList: [],
+		};
 	},
-	methods: {},
+	methods: {
+		showProducts(obj) {
+			this.$axios
+				.post("/test/getProductsList", {})
+				.then((response) => {
+					this.productsList = response.data.retObj;
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		},
+	},
 	components: {},
 	computed: {},
 	created() {},
