@@ -9,11 +9,11 @@
 					@mouseover="showProducts(item)"
 				>
 					<router-link tag="a" to="/">{{ item.name }}</router-link>
+					<!-- 详情页 -->
+					<div class="box-right"></div>
 				</li>
 			</ul>
 		</div>
-		<!-- 详情页 -->
-		<div class="box-right"></div>
 	</div>
 </template>
 
@@ -73,6 +73,7 @@ a {
 			li {
 				width: 100%;
 				height: 42px;
+				position: relative;
 
 				a {
 					line-height: 46px;
@@ -81,6 +82,13 @@ a {
 					height: 42px;
 					padding-left: 30px;
 					display: block;
+				}
+				.box-right {
+					position: absolute;
+					width: 100%;
+					height: 460px;
+					left: 0;
+					top: 0;
 				}
 			}
 			li:hover {
