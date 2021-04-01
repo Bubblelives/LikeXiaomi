@@ -154,3 +154,15 @@ Mock.mock("/test/getCategoryList", "get", {
         name: "生活 箱包"
     }]
 })
+
+Mock.mock("/test/getProductsList", "post", function(option) {
+    console.log(option);
+
+    return {
+        retCode: 200,
+        retObj: [{
+            id: 1,
+            name: ""
+        }]
+    }
+})

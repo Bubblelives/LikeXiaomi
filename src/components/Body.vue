@@ -10,7 +10,13 @@
 				>
 					<router-link tag="a" to="/">{{ item.name }}</router-link>
 					<!-- 详情页 -->
-					<div class="box-right"></div>
+					<div class="box-right">
+						<ul>
+							<li v-for="(i, k) in productsList" :key="k">
+								<router-link tag="div" to="/">{{ i.name }}</router-link>
+							</li>
+						</ul>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -73,7 +79,6 @@ a {
 			li {
 				width: 100%;
 				height: 42px;
-				position: relative;
 
 				a {
 					line-height: 46px;
@@ -83,16 +88,22 @@ a {
 					padding-left: 30px;
 					display: block;
 				}
-				.box-right {
-					position: absolute;
-					width: 100%;
-					height: 460px;
-					left: 0;
-					top: 0;
-				}
 			}
 			li:hover {
 				background-color: #ff6700;
+			}
+			.box-right {
+				display: none;
+				position: absolute;
+				width: 992px;
+				height: 460px;
+				left: 234px;
+				top: 0;
+				border: 1px solid rgb(136, 136, 136);
+				border-left: 0;
+			}
+			li:hover .box-right {
+				display: block;
 			}
 		}
 	}
