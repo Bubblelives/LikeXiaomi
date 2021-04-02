@@ -7,13 +7,19 @@
 					v-for="(item, key) in CategoryList"
 					:key="key"
 					@mouseover="showProducts(item)"
+					class="categoryLi"
 				>
 					<router-link tag="a" to="/">{{ item.name }}</router-link>
 					<!-- 详情页 -->
 					<div class="box-right">
 						<ul>
-							<li v-for="(i, k) in productsList" :key="k">
-								<router-link tag="div" to="/">{{ i.name }}</router-link>
+							<li v-for="(i, k) in productsList" :key="k" class="productsLi">
+								<router-link tag="a" to="/" class="productsA">
+									<img :src="i.img" class="" />
+									<span>
+										{{ i.name }}
+									</span>
+								</router-link>
 							</li>
 						</ul>
 					</div>
@@ -73,14 +79,14 @@ a {
 		width: 100%;
 		height: 100%;
 		background-color: rgba(105, 101, 101, 0.6);
-		ul {
+		> ul {
 			height: 460px;
 			padding: 20px 0;
-			li {
+			.categoryLi {
 				width: 100%;
 				height: 42px;
 
-				a {
+				> a {
 					line-height: 46px;
 					color: #ffffff;
 					font-weight: 700;
@@ -89,7 +95,7 @@ a {
 					display: block;
 				}
 			}
-			li:hover {
+			.categoryLi:hover {
 				background-color: #ff6700;
 			}
 			.box-right {
@@ -101,6 +107,27 @@ a {
 				top: 0;
 				border: 1px solid rgb(136, 136, 136);
 				border-left: 0;
+				ul {
+					display: flex;
+					flex-flow: column;
+					flex-wrap: wrap;
+					width: 100%;
+					height: 100%;
+					.productsLi {
+						width: 25%;
+						height: 76px;
+					}
+					.productsA {
+						display: block;
+						color: #000;
+						width: 100%;
+						height: 100%;
+						line-height: 76px;
+					}
+					.productsLi:hover span {
+						color: #ff6700;
+					}
+				}
 			}
 			li:hover .box-right {
 				display: block;

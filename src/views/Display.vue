@@ -53,5 +53,8 @@ export default {
 .displayContent {
 	width: 1226px;
 	margin: 0 auto;
+	.home-hero {
+		position: relative;
+	}
 }
 </style>

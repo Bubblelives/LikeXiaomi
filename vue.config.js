@@ -116,7 +116,7 @@ module.exports = {
         'style-resources-loader': {
             preProcessor: 'sass',
             patterns: [
-                path.resolve(__dirname, './src/assets/styles/*.scss') //你的.scss文件所在目录
+                path.resolve(__dirname, './src/styles/*.scss') //你的.scss文件所在目录
             ]
         }
     }

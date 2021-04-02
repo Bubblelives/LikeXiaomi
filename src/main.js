@@ -3,8 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import './style/common.scss'
+
+//图片懒加载
+import VueLazyload from 'vue-lazyload'
+
 Vue.use(ElementUI);
 
 Vue.use(axios)
@@ -12,10 +17,9 @@ Vue.prototype.$axios = axios
 axios.defaults.baseUrl = '/api'
 
 Vue.config.productionTip = false
-import './style/common.scss';
 
-//图片懒加载
-import VueLazyload from 'vue-lazyload';
+
+
 
 var userAgent = window.navigator.userAgent;
 if (userAgent.indexOf('NET') != -1) {

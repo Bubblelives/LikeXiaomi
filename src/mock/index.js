@@ -155,14 +155,81 @@ Mock.mock("/test/getCategoryList", "get", {
     }]
 })
 
-Mock.mock("/test/getProductsList", "post", function(option) {
-    console.log(option);
+Mock.mock("/test/getProductsList", "post", function() {
+
 
     return {
         retCode: 200,
         retObj: [{
             id: 1,
-            name: ""
+            name: "小米11 Ultra",
+            img: "../assets/xiaomi11.png"
+        }, {
+            id: 2,
+            name: "小米11 pro"
+        }, {
+            id: 3,
+            name: "小米11"
+        }, {
+            id: 4,
+            name: "小米11 青春版"
+        }, {
+            id: 5,
+            name: "小米10 Ultra"
+        }, {
+            id: 6,
+            name: "小米10 pro"
+        }, {
+            id: 7,
+            name: "小米10"
+        }, {
+            id: 8,
+            name: "小米10S"
+        }, {
+            id: 9,
+            name: "小米10青春版"
+        }, {
+            id: 10,
+            name: "K40 Pro系列"
+        }, {
+            id: 11,
+            name: "Redmi K40"
+        }, {
+            id: 12,
+            name: "Redmi K30至尊纪念版"
+        }, {
+            id: 13,
+            name: "Redmi 10X 5G"
+        }, {
+            id: 14,
+            name: "Redmi Note 9 Pro"
+        }, {
+            id: 15,
+            name: "Redmi Note 9 5G"
+        }, {
+            id: 16,
+            name: "Redmi Note 9 4G"
+        }, {
+            id: 17,
+            name: "Redmi Note 8 Pro"
+        }, {
+            id: 18,
+            name: "Redmi 9A"
+        }, {
+            id: 19,
+            name: "Redmi 9"
+        }, {
+            id: 20,
+            name: "Redmi 8A"
+        }, {
+            id: 21,
+            name: "Redmi 8"
+        }, {
+            id: 22,
+            name: "黑鲨4"
+        }, {
+            id: 23,
+            name: "黑鲨4 Pro"
         }]
     }
 })
